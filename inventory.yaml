@@ -1,0 +1,11 @@
+---
+all:
+
+  children:
+
+    MY_GROUP_NAME:
+      hosts:
+
+        myhostname.local:
+          ansible_host: HOST_IP
+          alias: myhostname

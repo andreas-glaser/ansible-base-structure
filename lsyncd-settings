@@ -1,0 +1,18 @@
+settings {
+   logfile    = "/tmp/lsyncd-ansible.log",
+   statusFile = "/tmp/lsyncd-ansible.status",
+   nodaemon   = true
+}
+sync {
+    default.rsyncssh,
+    source=".",
+    host="USERNAME@HOSTIP,
+    targetdir="~/ansible",
+    exclude={
+        ".idea/",
+        ".git",
+        "group_vars/all/vault-unencrypted.yaml",
+        "*~"
+    },
+    delay=0
+}
